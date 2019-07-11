@@ -1,17 +1,26 @@
-<section class="orders-show">
-
-  <header class="page-header">
-    <h1>Order #<%= @order.id %></h1>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body style="text-align:center">
+    <h1>Thank you for shopping with jungle!</h1>
+    <p>
+      Your order has been recieved and is now being processed.
+      <br>
+      Your order details are shown below for your reference.<br>
+    </p>
+    <header class="page-header">
   </header>
 
   <div class="order-summary jumbotron">
-    <h4>Thank you for your order!</h4>
+    <h1>Order #<%= @order.id %></h1>
 
     <div class="panel panel-default items">
     <table class="table table-bordered">
       <thead>
         <tr>
-          <th colspan="2">Product</th>
+          <th>Product</th>
           <th>Unit Price</th>
           <th>Quantity</th>
           <th>Price</th>
@@ -24,9 +33,7 @@
       </tbody>
       <tfoot>
         <tr>
-          <th colspan="4">
-            TOTAL:
-          </th>
+          <th>TOTAL:</th>
           <th>
             <%= @order.total_cents / 100.0 %>
           </th>
@@ -34,7 +41,5 @@
       </tfoot>
     </table>
   </div>
-
-  <%= link_to "Continue Shopping", root_path, class: 'btn btn-lg btn-primary' %>
-
-</section>
+  </body>
+</html>

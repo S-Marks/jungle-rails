@@ -4,6 +4,7 @@ class OrdersController < ApplicationController
     @order = Order.find(params[:id])
   end
 
+  # Stripe charge and checks if order is valid
   def create
     charge = perform_stripe_charge
     order  = create_order(charge)

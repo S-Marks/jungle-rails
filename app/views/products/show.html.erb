@@ -12,11 +12,11 @@
         <%= image_tag @product.image.url, class: 'main-img' %>
         <div>
           <% if current_user %>
-            <%= form_for [@product, @review] do |f|%>
-              <%= f.text_field :description%>
-              <%= f.select :rating, options_for_select(1..5)%>
-              <%= submit_tag "Submit"%>
-            <% end %>
+          <%= form_for [@product, @review] do |f|%>
+          <%= f.text_field :description%>
+          <%= f.select :rating, options_for_select(1..5)%>
+          <%= submit_tag "Submit"%>
+          <% end %>
           <% end %>
         </div>
       </div>
@@ -26,9 +26,14 @@
           <dt>Name</dt>
           <dd><%= @product.name %></dd>
           <% if @product.reviews.length > 0 %>
-            <dd><%= @product.reviews.average(:rating).to_i %></dd>
+          <dd><% @product.reviews.average(:rating).to_i.times { %>
+            <span class="fa fa-star checked"></span>
+            <% } %></dd>
+          <% (5 - @product.reviews.average(:rating).to_i).times { %>
+          <span class="fa fa-star"></span>
+          <% } %> </span>
           <% else %>
-            <dd><i>This product has not been reviewed yet.</i></dd>
+          <dd><i>This product has not been reviewed yet.</i></dd>
           <% end %>
           <dt>Description</dt>
           <dd><%= @product.description %></dd>
@@ -38,12 +43,16 @@
           <dd><%= @product.price %></dd>
           <br>
           <div>
+            <% if @product.reviews.length > 0 %>
             <dt>Reviews</dt>
-            <dd> 
+            <dd>
               <% @product.reviews.each do |review| %>
-                <%puts review.user%>
-                <%= render 'review', review: review %>
+              <%puts review.user%>
+              <%= render 'review', review: review %>
               <% end %>
+              <% else %>
+            <dd><i>Be the first to review this product!</i></dd>
+            <% end %>
             </dd>
           </div>
         </dl>

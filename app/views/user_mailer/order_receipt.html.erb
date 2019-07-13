@@ -1,45 +1,48 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
-  </head>
-  <body style="text-align:center">
-    <h1>Thank you for shopping with jungle!</h1>
-    <p>
-      Your order has been recieved and is now being processed.
-      <br>
-      Your order details are shown below for your reference.<br>
-    </p>
-    <header class="page-header">
+
+<head>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+</head>
+
+<body style="text-align:center">
+  <h1>Thank you for shopping with jungle!</h1>
+  <p>
+    Your order has been recieved and is now being processed.
+    <br>
+    Your order details are shown below for your reference.<br>
+  </p>
+  <header class="page-header">
   </header>
 
   <div class="order-summary jumbotron">
     <h1>Order #<%= @order.id %></h1>
 
     <div class="panel panel-default items">
-    <table class="table table-bordered">
-      <thead>
-        <tr>
-          <th>Product</th>
-          <th>Unit Price</th>
-          <th>Quantity</th>
-          <th>Price</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @order.line_items.each do |item| %>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Unit Price</th>
+            <th>Quantity</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @order.line_items.each do |item| %>
           <%= render 'item', product: Product.find(item[:product_id]), quantity: item[:quantity].to_i %>
-        <% end %>
-      </tbody>
-      <tfoot>
-        <tr>
-          <th>TOTAL:</th>
-          <th>
-            <%= @order.total_cents / 100.0 %>
-          </th>
-        </tr>
-      </tfoot>
-    </table>
-  </div>
-  </body>
+          <% end %>
+        </tbody>
+        <tfoot>
+          <tr>
+            <th>TOTAL:</th>
+            <th>
+              <%= @order.total_cents / 100.0 %>
+            </th>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+</body>
+
 </html>

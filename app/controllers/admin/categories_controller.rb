@@ -1,14 +1,16 @@
 class Admin::CategoriesController < ApplicationController
   http_basic_authenticate_with name: ENV["ADMIN_USERNAME"], password: ENV["ADMIN_PASS"]
 
+    #Display Categories
     def index
       @categories = Category.order(id: :desc).all
     end
-  
+    
     def new
       @category = Category.new
     end
-  
+
+    #Create new Category
     def create
       @category = Category.new(category_params)
   
@@ -18,7 +20,8 @@ class Admin::CategoriesController < ApplicationController
         render :new
       end
     end
-  
+    
+    #Delete Category
     def destroy
       @category = Category.find params[:id]
       @category.destroy

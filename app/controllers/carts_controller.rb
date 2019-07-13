@@ -3,6 +3,7 @@ class CartsController < ApplicationController
   def show
   end
 
+  # Adds item to cart
   def add_item
     product_id = params[:product_id].to_s
     modify_cart_delta(product_id, +1)
@@ -10,6 +11,7 @@ class CartsController < ApplicationController
     redirect_to :back
   end
 
+  # Removes item from cart
   def remove_item
     product_id = params[:product_id].to_s
     modify_cart_delta(product_id, -1)

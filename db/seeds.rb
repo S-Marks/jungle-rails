@@ -132,5 +132,73 @@ cat3.products.create!({
   price: 2_483.75
 })
 
+## USERS
+
+puts "Finding or Creating Users ..."
+
+User.create!({
+  name: "Shrek",
+  email: "getshrekd@swamp.fly",
+  password_digest: "donkey"
+})
+
+User.create!({
+  name: "Banana",
+  email: "inpajamas@peel.it",
+  password_digest: "nanner"
+})
+
+User.create!({
+  name: "Austin Texas",
+  email: "sweethome@laba.ma",
+  password_digest: "friedchicken"
+})
+
+User.create!({
+  name: "Tomato",
+  email: "tomaytotom@to.red",
+  password_digest: "veggie"
+})
+
+## REVIEWS
+
+puts "Finding or Creating Reviews ..."
+
+Review.create!({
+  product: Product.find(4),
+  user: User.first,
+  description: "Ruined my marriage.",
+  rating: 0
+})
+
+Review.create!({
+  product: Product.find(4),
+  user: User.third,
+  description: "Got me a new wife!",
+  rating: 5
+})
+
+Review.create!({
+  product: Product.find(7),
+  user: User.second,
+  description: "I BOUGHT ALL OF THEM.",
+  rating: 5
+})
+
+Review.create!({
+  product: Product.find(3),
+  user: User.last,
+  description: "Kinda meh",
+  rating: 2.5
+})
+
+Review.create!({
+  product: Product.find(6),
+  user: User.last,
+  description: "WEEEEEEEEEEEEE",
+  rating: 5
+})
+
+
 
 puts "DONE!"

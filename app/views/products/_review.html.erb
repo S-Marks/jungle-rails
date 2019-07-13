@@ -1,0 +1,7 @@
+<% if current_user && review.user == current_user %>
+    <dd><h4><i><b>Your review <%= link_to fa_icon('trash'), product_review_url(params[:id], review), class: 'label-danger label', method: :delete %></b></i></h4></dd>
+<% else %>
+<dd><h4><i><b><%= review.user.name%></b></i></h4></dd>
+<% end %>
+<dd><%= review.description %></dd>
+<dd><%= review.rating %></dd>

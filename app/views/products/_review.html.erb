@@ -6,7 +6,7 @@
 </dd>
 <% else %>
 <dd>
-  <h4><i><b><%= review.user.name%></b></i></h4>
+  <h4><i><b><%= review.user.name.upcase%></b></i></h4>
 </dd>
 <% end %>
 <dd><% review.rating.times { %>

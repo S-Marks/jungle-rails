@@ -1,6 +1,6 @@
 <tr>
   <td>
-    <h4><%= category.name %></h4>
+    <h4><%= category.name.upcase %></h4>
   </td>
   <td style="width: 20px">
     <%= link_to fa_icon('trash'), [:admin, category], class: 'btn btn-sm btn-danger', method: :delete, data: { confirm: "Are you sure?" } %>

@@ -1,24 +1,33 @@
+@import 'top_nav';
+
+.page-header {
+  border-bottom: 1px solid #8500ff;
+
+  h1 {
+    color: lightgrey;
+    font-family: 'Raleway', sans-serif;
+  }
+}
+
 main section.products-index,
 main section.categories-show {
 
   .products {
-    display:         flex;
-    flex-direction:  row;
-    flex-wrap:       wrap;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-around;
 
     .product {
-      // flex:      1;
       max-width: 260px;
       // so that footer within can be positioned absolutely
-      position:  relative;
-
-      border:        1px solid #ccc;
-      border-radius: 5px;
-      padding:       15px;
+      position: relative;
+      color: darkgrey;
+      padding: 15px;
       padding-bottom: 80px;
-      margin-top:    20px;
-      // margin:        10px;
+      margin-top: 20px;
+      border: 1px solid black;
+      transition: all 0.3s;
 
       header img {
         max-width: 100%;
@@ -27,17 +36,33 @@ main section.categories-show {
         display: block;
       }
 
+      h4 {
+        padding-top: 10px;
+        color: lightgrey;
+      }
+
+      p {
+        font-family: 'Open Sans';
+      }
+
+      .btn {
+        border-radius: 0px;
+        border-color: #484848;
+        background-color: #484848;
+        color: white;
+      }
+
       footer {
         position: absolute;
         bottom: 0;
-        left:   0;
-        background-color: #EEE;
+        left: 0;
+        background-color: #131212;
         padding: 15px;
-        border-bottom-left-radius: 5px;
-        border-bottom-right-radius: 5px;
         width: 100%;
         opacity: 0.3;
         transition: all 0.3s;
+
+        .button_to {}
       }
 
       aside.price {
@@ -45,9 +70,9 @@ main section.categories-show {
         top: 0;
         right: 0;
         padding: 10px;
-        background-color: #eee;
-        border-top-right-radius: 4px;
-        border-bottom-left-radius: 20px;
+        color: whitesmoke;
+        background-color: #0e0e0e;
+        border: 0.5px solid lightseagreen;
         font-size: 0.8em;
       }
 
@@ -64,8 +89,7 @@ main section.categories-show {
       }
 
       &:hover {
-
-        border-color: #999;
+        border: 1px solid #ccc;
 
         footer {
           opacity: 1.0;
@@ -84,5 +108,3 @@ main section.products-show {
     }
   }
 }
-
-

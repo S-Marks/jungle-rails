@@ -1,6 +1,6 @@
 <% if current_user && review.user == current_user %>
 <dd>
-  <h4><i><b>Your review
+  <h4><i><b>YOUR REVIEW
         <%= link_to fa_icon('trash'), product_review_url(params[:id], review), class: 'label-danger label', method: :delete %></b></i>
   </h4>
 </dd>

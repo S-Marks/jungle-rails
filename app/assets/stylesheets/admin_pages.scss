@@ -1,0 +1,45 @@
+.well {
+    border-radius: 0px;
+    background-color: #212121;
+    border: 1px solid black;
+
+    .btn {
+        border-radius: 0px;
+        border-color: #484848;
+        background-color: #484848;
+    }
+}
+
+.panel {
+    border-radius: 0px;
+    background-color: #080808;
+    color: darkgrey;
+    font-family: 'Raleway';
+    border: 1px dotted darkslategrey;
+
+    .btn {
+        border-radius: 0px;
+        background-color: #ff0047;
+    }
+}
+
+.col-sm-6 {
+    margin-left: 0px;
+
+    .form-group {
+        padding-top: 10px;
+    
+        .form-control {
+            border-radius: 0px;
+            background-color: black;
+            border: 1px solid dimgrey;
+            padding: 20px;
+        }
+    }
+    
+    .btn {
+        border-radius: 0px;
+        border-color: #484848;
+        background-color: #484848;
+    }
+}

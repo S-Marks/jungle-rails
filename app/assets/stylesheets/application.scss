@@ -4,11 +4,18 @@
 @import "font-awesome";
 
 // App
+@import "user_pages";
 @import "products";
+@import "admin_pages";
 
 // Global
-body {
-  padding-top: 70px;
+html {
+  height: 100%;
+
+  body {
+    padding-top: 70px;
+    background-color: black;
+  }
 }
 
 // Bootstrap adjustments

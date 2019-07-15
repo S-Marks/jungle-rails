@@ -1,14 +1,37 @@
-<h1>Signup</h1>
+<!DOCTYPE html>
+<html lang="en">
 
-<%= form_for :user, url: '/users' do |f| %>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
 
-Name: <br> <%= f.text_field :name %>
-<br>
-Email: <br> <%= f.text_field :email %>
-<br>
-Password: <br> <%= f.password_field :password %>
-<br>
-Password Confirmation: <br> <%= f.password_field :password_confirmation %>
-<%= f.submit "Submit" %>
+<body>
+    <div class="register">
+        <h1>CREATE ACCOUNT</h1>
+        <div class="register-forms">
+            <%= form_for :user, url: '/users' do |f| %>
 
-<% end %>
+            <div class="register-name">
+                <%= f.text_field :name, placeholder: "Full Name" %></div>
+            <br>
+            <div class="register-email">
+                <%= f.text_field :email, placeholder: "Email Address" %></div>
+            <br>
+            <div class="register-password">
+                <%= f.password_field :password, placeholder: "Password" %></div>
+            <br>
+            <div class="register-confirmation">
+                <%= f.password_field :password_confirmation, placeholder: "Password Confirmation" %></div>
+            <br>
+            <%= f.submit "CREATE" %>
+
+            <% end %>
+        </div>
+    </div>
+
+</body>
+
+</html>

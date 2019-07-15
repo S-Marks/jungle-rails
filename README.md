@@ -3,6 +3,11 @@
 A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.
 
 
+![Screenshot of dash](http://full/path/to/img.jpg "Jungle Dash")
+![Screenshot of product](http://full/path/to/img.jpg "Jungle Product")
+![Screenshot of cart](http://full/path/to/img.jpg "Jungle Cart")
+
+
 ## Setup
 
 1. Fork & Clone

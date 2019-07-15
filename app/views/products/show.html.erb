@@ -1,7 +1,7 @@
 <section class="products-show">
 
   <header class="page-header">
-    <h1><%= link_to @product.category.name, @product.category %> &raquo; <%= @product.name.upcase %></h1>
+    <h1><%= link_to @product.category.name, @product.category.name %> &raquo; <%= @product.name.upcase %></h1>
   </header>
 
   <article class="product-detail">
@@ -13,9 +13,9 @@
         <div>
           <% if current_user %>
           <%= form_for [@product, @review] do |f|%>
-          <%= f.text_field :description%>
+          <%= f.text_field :description, placeholder: "LEAVE A REVIEW"%>
           <%= f.select :rating, options_for_select(1..5)%>
-          <%= submit_tag "Submit"%>
+          <%= submit_tag "SUBMIT"%>
           <% end %>
           <% end %>
         </div>
@@ -23,7 +23,9 @@
 
       <div class="col-sm-8">
         <dl class="dl-horizontal">
-          <dd><h1><%= @product.name.upcase %></h1></dd>
+          <dd>
+            <h1><%= @product.name.upcase %></h1>
+          </dd>
           <% if @product.reviews.length > 0 %>
           <dd><% @product.reviews.average(:rating).to_i.times { %>
             <span class="fa fa-star checked"></span>
@@ -34,25 +36,26 @@
           <% else %>
           <dd><i>This product has not been reviewed yet.</i></dd>
           <% end %>
-          <dt>Description</dt>
-          <dd><%= @product.description %></dd>
-          <dt>Quantity</dt>
+          <dd class="description"><%= @product.description %></dd>
+          <dt>QUANTITY</dt>
           <dd><%= @product.quantity %></dd>
-          <dt>Price</dt>
+          <dt>PRICE</dt>
           <dd><%= @product.price %></dd>
           <br>
           <div>
             <% if @product.reviews.length > 0 %>
             <dt>REVIEWS</dt>
-            <dd>
-              <% @product.reviews.each do |review| %>
-              <%puts review.user%>
-              <%= render 'review', review: review %>
+            <div class="reviews">
+              <dd>
+                <% @product.reviews.each do |review| %>
+                <%puts review.user%>
+                <%= render 'review', review: review %>
+                <% end %>
+                <% else %>
+              <dd><i>Be the first to review this product!</i></dd>
               <% end %>
-              <% else %>
-            <dd><i>Be the first to review this product!</i></dd>
-            <% end %>
-            </dd>
+              </dd>
+            </div>
           </div>
         </dl>
       </div>

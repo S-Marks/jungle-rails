@@ -29,10 +29,10 @@
           <% if @product.reviews.length > 0 %>
           <dd><% @product.reviews.average(:rating).to_i.times { %>
             <span class="fa fa-star checked"></span>
-            <% } %></dd>
+            <% } %>
           <% (5 - @product.reviews.average(:rating).to_i).times { %>
           <span class="fa fa-star"></span>
-          <% } %> </span>
+          <% } %> </span></dd>
           <% else %>
           <dd><i>This product has not been reviewed yet.</i></dd>
           <% end %>

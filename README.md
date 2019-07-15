@@ -3,9 +3,9 @@
 A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.
 
 
-![Screenshot of dash](http://full/path/to/img.jpg "Jungle Dash")
-![Screenshot of product](http://full/path/to/img.jpg "Jungle Product")
-![Screenshot of cart](http://full/path/to/img.jpg "Jungle Cart")
+![Screenshot of dash](public/uploads/screenshots/jngle-dash.png "Jungle Dash")
+![Screenshot of product](public/uploads/screenshots/jngle-product.png "Jungle Product")
+![Screenshot of cart](public/uploads/screenshots/jngle-cart.png "Jungle Cart")
 
 
 ## Setup

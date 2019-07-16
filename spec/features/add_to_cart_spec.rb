@@ -1,11 +1,10 @@
 require 'rails_helper'
 
-RSpec.feature "Visitor views product details", type: :feature, js: true do
+RSpec.feature "Visitor adds item to cart", type: :feature, js: true do
 
   # SETUP
   before :each do
-    @category = Category.create! name: 'Apparel'
-
+      @category = Category.create! name: 'Apparel'
       @category.products.create!(
         name:  Faker::Hipster.sentence(3),
         description: Faker::Hipster.paragraph(4),
@@ -15,15 +14,15 @@ RSpec.feature "Visitor views product details", type: :feature, js: true do
       )
   end
 
-  scenario "They see the product they clicked on" do
+  scenario "They see an item has been added to their cart." do
     # ACT
     visit root_path
-    click_on 'Details'
+    click_on 'Add'
 
     # DEBUG
-    save_screenshot "product.png"
+    save_screenshot "homepage.png"
 
     # VERIFY
-    expect(page).to have_css 'article.product', count: 1
+    expect(page).to have_text 'My Cart', count: 1
   end
 end

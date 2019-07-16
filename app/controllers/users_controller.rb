@@ -4,9 +4,9 @@ class UsersController < ApplicationController
 
     # Create new user on sign up
     def create
-        if user = User.authenticate_with_crendentials(params[:email], params[:password])
-          @user.save
-          session[:user_id] = @user.id
+      user = User.new(user_params)
+      if user.save
+          session[:user_id] = user.id
           redirect_to '/'
         else
           redirect_to '/signup'
